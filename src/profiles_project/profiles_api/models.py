@@ -29,7 +29,7 @@ class UserProfileManager(BaseUserManager):
         user.is_superuser=True
         user.is_staff= True
 
-        user.save(using=self_.db)
+        user.save(using=self._db)
 
         return user
 
@@ -57,7 +57,7 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
     def get_short_name(self):
         """Used to get a user short name."""
 
-        return sef.name
+        return self.name
 
     def __str__(self):
         """Django uses this when  it needs converts the object to a string"""
